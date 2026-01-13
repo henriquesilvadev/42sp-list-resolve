@@ -78,5 +78,5 @@ cc -Wall -Wextra -Werror ft_putchar.c -o putchar
 
 <p align="center">
   Desenvolvido por <b>Henrique Honório</b> (hhonorio)<br>
-  <a href="https://github.com/henriquesilvadev">Github</a> • <a href="https://linkedin.com/in/henrique-h-silva">LinkedIn</a>
+  <a href="https://github.com/henriquehsilva">Github</a> • <a href="https://linkedin.com/in/henriquesilvadev">LinkedIn</a>
 </p>
