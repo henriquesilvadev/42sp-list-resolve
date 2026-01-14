@@ -34,8 +34,8 @@ Abaixo está o status atual de cada lista de exercícios:
 
 | Módulo | Descrição | Status |
 | :--- | :--- | :---: |
-| [Shell 00](https://github.com/henriquesilvadev/42sp-list-resolve/tree/main/anotacoes/Piscina_C_Shell_00) | Fundamentos de Shell e Git | ✅ Finalizado |
-| [Shell 01](https://github.com/henriquesilvadev/42sp-list-resolve/tree/main/anotacoes/Piscina_C_Shell_01) | Comandos Avançados de Shell | ⏳ Em breve |
+| [Shell 00](./shell-list-00/README.md) | Fundamentos de Shell e Git | ✅ Finalizado |
+| [Shell 01](./shell-list-01/README.md) | Comandos Avançados de Shell | ✅ Finalizado |
 | **C 00** | Primeiros passos em C | ⏳ Em breve |
 | **C 01** | Ponteiros e Memória | ⏳ Em breve |
 | **C 02** | Manipulação de Strings | ⏳ Em breve |
