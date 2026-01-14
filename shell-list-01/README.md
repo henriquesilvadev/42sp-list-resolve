@@ -40,6 +40,12 @@ Script para processar logins do sistema, inverter strings e filtrar por interval
 - **Lógica:** Remove comentários, seleciona uma linha a cada duas começando pela segunda, inverte logins, ordena inversamente, filtra pelo intervalo `FT_LINE1` a `FT_LINE2`, junta com `, ` e finaliza com `.`.
 - **Comando Final:** Veja o arquivo `ex07/r_dwssap.sh` para a pipeline completa.
 
+### ex08: Soma de Bases Customizadas (`add_chelou.sh`)
+Escreve uma linha de comando que soma dois números em bases customizadas e exibe o resultado em uma terceira base.
+- **Comandos:** `echo`, `tr`, `bc`
+- **Lógica:** Traduz os caracteres das bases `\'?"\"` e `mrdoc` para decimal (01234), soma usando `bc` em base 13, e traduz o resultado para a base `gtaio luSnemf`.
+- **Comando Final:** `echo "obase=13; ibase=5; $(echo $FT_NBR1 | tr \"'\\\\\\\"?!\" \"01234\") + $(echo $FT_NBR2 | tr \"mrdoc\" \"01234\")" | bc | tr \"0123456789ABC\" \"gtaio luSnemf\"`
+
 ## Comandos Úteis Aprendidos
 - `tr`: Traduz ou deleta caracteres (ex: `tr -d '\n'` para remover quebras de linha).
 - `awk`: Utilizado para filtrar colunas (`$2`) ou linhas baseadas em condições (`NR % 2 == 0`).
