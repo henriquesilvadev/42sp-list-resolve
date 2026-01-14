@@ -28,54 +28,6 @@ Este repositório contém as minhas resoluções e anotações durante a **Pisci
 
 ---
 
-## 📊 Progresso dos Módulos
-
-Abaixo está o status atual de cada lista de exercícios:
-
-| Módulo | Descrição | Status |
-| :--- | :--- | :---: |
-| [Shell 00](./shell-list-00/README.md) | Fundamentos de Shell e Git | ✅ Finalizado |
-| [Shell 01](./shell-list-01/README.md) | Comandos Avançados de Shell | ✅ Finalizado |
-| **C 00** | Primeiros passos em C | ⏳ Em breve |
-| **C 01** | Ponteiros e Memória | ⏳ Em breve |
-| **C 02** | Manipulação de Strings | ⏳ Em breve |
-| **C 03** | Funções de bibliotecas padrão | ⏳ Em breve |
-| **C 04** | Conversão de tipos e Recursão | ⏳ Em breve |
-| **C 05** | Algoritmos Matemáticos | ⏳ Em breve |
-
----
-
-## 📏 A Norma
-
-Na 42, escrevemos código que não apenas funciona, mas que é elegante. Algumas regras principais:
-- Máximo de 25 linhas por função.
-- Máximo de 5 funções por arquivo.
-- Não usar `for`, `do...while`, `switch` ou `case`.
-- Declaração de variáveis sempre no topo da função.
-
-Para verificar a norma, execute:
-```bash
-norminette -R CheckForbiddenSourceHeader [arquivo.c]
-```
-
----
-
-## 🚀 Como Executar
-
-Para compilar qualquer exercício, utilize o seguinte comando:
-
-```bash
-cc -Wall -Wextra -Werror [arquivo.c] -o [nome_do_executavel]
-```
-
-Exemplo:
-```bash
-cc -Wall -Wextra -Werror ft_putchar.c -o putchar
-./putchar
-```
-
----
-
 <p align="center">
   Desenvolvido por <b>Henrique Honório</b> (hhonorio)<br>
   <a href="https://github.com/henriquehsilva">Github</a> • <a href="https://linkedin.com/in/henriquesilvadev">LinkedIn</a>
