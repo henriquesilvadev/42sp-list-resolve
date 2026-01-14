@@ -23,7 +23,7 @@ Este repositório contém as minhas resoluções e anotações durante a **Pisci
 - **Linguagem:** C (C99 compatível)
 - **Scripting:** Shell (Bash/Zsh)
 - **Compilador:** `cc` ou `gcc` com flags `-Wall -Wextra -Werror`
-- **Linter:** Norminette (v3)
+- **Linter:** Norminette (v4.1) [https://henriquesilva.dev/norma.html]
 - **Editor:** Vim / VS Code
 
 ---
