@@ -14,7 +14,7 @@
 Este repositório contém as minhas resoluções e anotações durante a **Piscina de C da 42 São Paulo**. A Piscina é um período intensivo de 26 dias focado em lógica de programação, desenvolvimento em C e Shell, e trabalho colaborativo.
 
 > [!IMPORTANT]
-> Todo o código aqui presente segue a **Norma v3** da 42, garantindo clareza, legibilidade e conformidade com os padrões da escola.
+> Todo o código aqui presente segue a **Norma v4.1** da 42, garantindo clareza, legibilidade e conformidade com os padrões da escola.
 
 ---
 
