@@ -7,7 +7,8 @@ preencher uma grade 4x4 com numeros de 1 a 4, sem repeticao por linha
 ou coluna, respeitando 16 dicas de visibilidade (quantos predios sao
 vistos de cada lado).
 
-O programa recebe as 16 dicas em uma unica string (separadas por espaco)
+O programa recebe as 16 dicas em uma unica string (separadas por espaco),
+com valores dinamicos informados em tempo de execucao
 e tenta montar uma solucao valida. Se nao houver solucao, imprime "Error".
 
 ## Como compilar e executar
