@@ -1,31 +1,28 @@
-#include <unistd.h>
+#define SIZE 4
+#define VIEWS 16
 
-int		parse_input(char *str, int *views, int size);
-void	init_grid(int size, int grid[size][size]);
-int		solve(int size, int grid[size][size], int *views, int pos,
-			int cells_count);
-void	print_grid(int size, int grid[size][size]);
+int	parse_input(char *str, int *views);
+void	init_grid(int grid[SIZE][SIZE]);
+int	solve(int grid[SIZE][SIZE], int *views, int pos);
+void	print_grid(int grid[SIZE][SIZE]);
 void	ft_putstr(char *str);
 
 int	main(int argc, char **argv)
 {
-	static int	grid_size = 4;
-	static int	views_count = 0;
-	int			grid[grid_size][grid_size];
-	int			views[grid_size * 4];
+	int	grid[SIZE][SIZE];
+	int	views[VIEWS];
 
-	views_count = grid_size * grid_size;
-	if (argc != 2 || !parse_input(argv[1], views, grid_size))
+	if (argc != 2 || !parse_input(argv[1], views))
 	{
 		ft_putstr("Error\n");
 		return (1);
 	}
-	init_grid(grid_size, grid);
-	if (!solve(grid_size, grid, views, 0, views_count))
+	init_grid(grid);
+	if (!solve(grid, views, 0))
 	{
 		ft_putstr("Error\n");
 		return (1);
 	}
-	print_grid(grid_size, grid);
+	print_grid(grid);
 	return (0);
 }

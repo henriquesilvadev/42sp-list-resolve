@@ -1,24 +1,25 @@
-int	is_valid(int size, int grid[size][size], int row, int col, int num);
-int	check_views(int size, int grid[size][size], int *views);
+#define SIZE 4
 
-int	solve(int size, int grid[size][size], int *views, int pos,
-		int cells_count)
+int	check_views(int grid[SIZE][SIZE], int *views);
+int	is_valid(int grid[SIZE][SIZE], int row, int col, int num);
+
+int	solve(int grid[SIZE][SIZE], int *views, int pos)
 {
 	int	row;
 	int	col;
 	int	num;
 
-	if (pos == cells_count)
-		return (check_views(size, grid, views));
-	row = pos / size;
-	col = pos % size;
+	if (pos == (SIZE * SIZE))
+		return (check_views(grid, views));
+	row = pos / SIZE;
+	col = pos % SIZE;
 	num = 1;
-	while (num <= size)
+	while (num <= SIZE)
 	{
-		if (is_valid(size, grid, row, col, num))
+		if (is_valid(grid, row, col, num))
 		{
 			grid[row][col] = num;
-			if (solve(size, grid, views, pos + 1, cells_count))
+			if (solve(grid, views, pos + 1))
 				return (1);
 			grid[row][col] = 0;
 		}

@@ -1,9 +1,11 @@
-int	is_valid(int size, int grid[size][size], int row, int col, int num)
+#define SIZE 4
+
+int	is_valid(int grid[SIZE][SIZE], int row, int col, int num)
 {
 	int	i;
 
 	i = 0;
-	while (i < size)
+	while (i < SIZE)
 	{
 		if (grid[row][i] == num || grid[i][col] == num)
 			return (0);

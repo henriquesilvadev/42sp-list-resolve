@@ -1,20 +1,20 @@
-#include <unistd.h>
+#define SIZE 4
 
 void	ft_putchar(char c);
 
-void	print_grid(int size, int grid[size][size])
+void	print_grid(int grid[SIZE][SIZE])
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < size)
+	while (i < SIZE)
 	{
 		j = 0;
-		while (j < size)
+		while (j < SIZE)
 		{
 			ft_putchar(grid[i][j] + '0');
-			if (j < size - 1)
+			if (j < SIZE - 1)
 				ft_putchar(' ');
 			j++;
 		}
