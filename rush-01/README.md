@@ -1,8 +1,8 @@
-# Rush-01 (Skyscrapers 4x4) - README
+# Rush-01 - README
 
 ## Visao geral
 
-Este projeto resolve o puzzle "Skyscrapers" 4x4 (Rush-01). O desafio:
+(Rush-01). O desafio:
 preencher uma grade 4x4 com numeros de 1 a 4, sem repeticao por linha
 ou coluna, respeitando 16 dicas de visibilidade (quantos predios sao
 vistos de cada lado).
