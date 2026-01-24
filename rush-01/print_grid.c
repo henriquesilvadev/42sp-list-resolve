@@ -1,20 +1,18 @@
-#define SIZE 4
-
 void	ft_putchar(char c);
 
-void	print_grid(int grid[SIZE][SIZE])
+void	print_grid(int grid[4][4])
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < SIZE)
+	while (i < 4)
 	{
 		j = 0;
-		while (j < SIZE)
+		while (j < 4)
 		{
 			ft_putchar(grid[i][j] + '0');
-			if (j < SIZE - 1)
+			if (j < 4 - 1)
 				ft_putchar(' ');
 			j++;
 		}
