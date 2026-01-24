@@ -1,5 +1,3 @@
-#define SIZE 4
-
 static int	check_line(int *line, int expected)
 {
 	int	i;
@@ -9,7 +7,7 @@ static int	check_line(int *line, int expected)
 	i = 0;
 	max = 0;
 	seen = 0;
-	while (i < SIZE)
+	while (i < 4)
 	{
 		if (line[i] > max)
 		{
@@ -21,17 +19,17 @@ static int	check_line(int *line, int expected)
 	return (seen == expected);
 }
 
-int	check_views(int grid[SIZE][SIZE], int *views)
+int	check_views(int grid[4][4], int *views)
 {
 	int	i;
 	int	k;
-	int	line[SIZE];
+	int	line[4];
 
 	i = 0;
-	while (i < SIZE)
+	while (i < 4)
 	{
 		k = 0;
-		while (k < SIZE)
+		while (k < 4)
 		{
 			line[k] = grid[k][i];
 			k++;
@@ -40,27 +38,27 @@ int	check_views(int grid[SIZE][SIZE], int *views)
 			return (0);
 
 		k = 0;
-		while (k < SIZE)
+		while (k < 4)
 		{
-			line[k] = grid[SIZE - 1 - k][i];
+			line[k] = grid[4 - 1 - k][i];
 			k++;
 		}
-		if (!check_line(line, views[i + SIZE]))
+		if (!check_line(line, views[i + 4]))
 			return (0);
 		i++;
 	}
 	i = 0;
-	while (i < SIZE)
+	while (i < 4)
 	{
-		if (!check_line(grid[i], views[i + (SIZE * 2)]))
+		if (!check_line(grid[i], views[i + (4 * 2)]))
 			return (0);
 		k = 0;
-		while (k < SIZE)
+		while (k < 4)
 		{
-			line[k] = grid[i][SIZE - 1 - k];
+			line[k] = grid[i][4 - 1 - k];
 			k++;
 		}
-		if (!check_line(line, views[i + (SIZE * 3)]))
+		if (!check_line(line, views[i + (4 * 3)]))
 			return (0);
 		i++;
 	}
