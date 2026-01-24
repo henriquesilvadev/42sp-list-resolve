@@ -1,20 +1,18 @@
-#define SIZE 4
+int	check_views(int grid[4][4], int *views);
+int	is_valid(int grid[4][4], int row, int col, int num);
 
-int	check_views(int grid[SIZE][SIZE], int *views);
-int	is_valid(int grid[SIZE][SIZE], int row, int col, int num);
-
-int	solve(int grid[SIZE][SIZE], int *views, int pos)
+int	solve(int grid[4][4], int *views, int pos)
 {
 	int	row;
 	int	col;
 	int	num;
 
-	if (pos == (SIZE * SIZE))
+	if (pos == (4 * 4))
 		return (check_views(grid, views));
-	row = pos / SIZE;
-	col = pos % SIZE;
+	row = pos / 4;
+	col = pos % 4;
 	num = 1;
-	while (num <= SIZE)
+	while (num <= 4)
 	{
 		if (is_valid(grid, row, col, num))
 		{
