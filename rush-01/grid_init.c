@@ -1,15 +1,13 @@
-#define SIZE 4
-
-void	init_grid(int grid[SIZE][SIZE])
+void	init_grid(int grid[4][4])
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < SIZE)
+	while (i < 4)
 	{
 		j = 0;
-		while (j < SIZE)
+		while (j < 4)
 			grid[i][j++] = 0;
 		i++;
 	}
