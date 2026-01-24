@@ -1,6 +1,3 @@
-#define SIZE 4
-#define VIEWS 16
-
 int	parse_input(char *str, int *views)
 {
 	int	i;
@@ -10,9 +7,9 @@ int	parse_input(char *str, int *views)
 	j = 0;
 	while (str[i])
 	{
-		if (str[i] >= '1' && str[i] <= '0' + SIZE)
+		if (str[i] >= '1' && str[i] <= '0' + 4)
 		{
-			if (j >= VIEWS)
+			if (j >= 16)
 				return (0);
 			views[j++] = str[i] - '0';
 		}
@@ -20,5 +17,5 @@ int	parse_input(char *str, int *views)
 			return (0);
 		i++;
 	}
-	return (j == VIEWS);
+	return (j == 16);
 }
