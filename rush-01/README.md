@@ -9,7 +9,7 @@ vistos de cada lado).
 
 O programa recebe as 16 dicas em uma unica string (separadas por espaco),
 com valores dinamicos informados em tempo de execucao
-e tenta montar uma solucao valida. Se nao houver solucao, imprime "Error".
+e tenta montar uma solucao valida. Se nao houver solucao, imprime "Error"
 
 ## Como compilar e executar
 
