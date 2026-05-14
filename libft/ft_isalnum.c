@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_fatorial.c                            :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/13 07:35:47 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/14 16:08:56 by hhonorio         ###   ########.fr       */
+/*   Created: 2026/05/14 15:03:35 by hhonorio          #+#    #+#             */
+/*   Updated: 2026/05/14 15:40:38 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_factorial(int nb)
+#include "libft.h"
+
+int	ft_isalnum(int c)
 {
-	if (nb < 0)
-		return (0);
-	if (nb == 0 || nb == 1)
-		return (1);
-	return (nb * ft_recursive_factorial(nb - 1));
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
