@@ -11,7 +11,9 @@
 
 ## 📝 Sobre o Projeto
 
-Este repositório contém as minhas resoluções e anotações durante a **Piscina de C da 42 São Paulo**. A Piscina é um período intensivo de 26 dias focado em lógica de programação, desenvolvimento em C e Shell, e trabalho colaborativo.
+Este repositório contém as minhas resoluções e anotações durante o **Curso na 42 São Paulo**. A Piscina é um período intensivo de 26 dias focado em lógica de programação, desenvolvimento em C e Shell, e trabalho colaborativo.
+
+Após a Piscina, o currículo evolui para projetos mais avançados envolvendo C, Python, algoritmos, estruturas de dados, manipulação de memória, desenvolvimento de aplicações, automação, redes, sistemas operacionais e fundamentos de engenharia de software. O aprendizado é totalmente baseado em projetos práticos, peer-to-peer learning e resolução de problemas reais, incentivando autonomia, raciocínio lógico e capacidade de adaptação a novas tecnologias.
 
 > [!IMPORTANT]
 > Todo o código aqui presente segue a **Norma v4.1** da 42, garantindo clareza, legibilidade e conformidade com os padrões da escola.
