@@ -1,0 +1,6 @@
+Caso minha avaliadora não estivesse presente no horário e local marcados, esperaria por 15 
+minutos no local, caso não se apresentasse, tentaria entrar em contato através dos canais de 
+comunicação oficiais da 42 no Slack, enviando um direct com a seguinte mensagem.
+“Olá, tudo bem! Tenho uma avaliação agendada com você, poderia me informar se pretende 
+realizá-la? Ou se posso reagendar marcando como ausente.”
+Caso ela peça que espere por algum tempo, aguardaria, não marcando como ausente.
