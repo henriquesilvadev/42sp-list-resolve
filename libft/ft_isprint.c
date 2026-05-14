@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/14 15:28:40 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/14 17:29:59 by hhonorio         ###   ########.fr       */
+/*   Created: 2026/05/14 17:06:26 by hhonorio          #+#    #+#             */
+/*   Updated: 2026/05/14 17:10:00 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-/* *************************************** */
-/* Mandatory Functions                     */
-/* Character checking functions            */
-/* *************************************** */
-
-int ft_isalpha(int c);
-int ft_isdigit(int c);
-int ft_isalnum(int c);
-int ft_isascii(int c);
-int ft_isprint(int c);
-
-#endif
+int	ft_isprint(int c)
+{
+	return (c >= 32 && c <= 126);
+}
