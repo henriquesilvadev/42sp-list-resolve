@@ -1,6 +1,6 @@
 # Libft
 
-<p align="center">
+<p align="left">
   <img src="https://img.shields.io/badge/Language-C-00599C?style=for-the-badge&logo=c&logoColor=white" />
   <img src="https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge" />
 </p>
