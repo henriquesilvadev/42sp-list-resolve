@@ -1,5 +1,10 @@
 # Libft
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Language-C-00599C?style=for-the-badge&logo=c&logoColor=white" />
+  <img src="https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge" />
+</p>
+
 Este projeto recria algumas funções da biblioteca padrão de C, usando apenas
 implementações próprias. A ideia principal é entender como funções básicas
 trabalham por baixo: comparação de caracteres, percorrimento de strings,
