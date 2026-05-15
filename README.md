@@ -1,4 +1,4 @@
-# Curso 42 - [42 São Paulo](https://www.42sp.org.br/)
+# My Journey - [42 São Paulo](https://www.42sp.org.br/)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Language-C-00599C?style=for-the-badge&logo=c&logoColor=white" />
