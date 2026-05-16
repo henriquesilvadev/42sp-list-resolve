@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 15:32:30 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/15 16:32:45 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/16 07:56:29 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	last = NULL;
 	uc = (unsigned char)c;
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		if (s[i] == uc)
 			last = (char *)&s[i];
-		if (uc == '\0')
-			return ((char *)&s[i]);
 		i++;
 	}
+	if (s[i] == uc)
+		return ((char *)&s[i]);
 	return (last);
 }
