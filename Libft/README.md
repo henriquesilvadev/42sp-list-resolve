@@ -184,6 +184,27 @@ ponteiro para essa posição.
 - Esta versão foi corrigida para tratar o terminador após o loop, retornando o
   endereço correto do `\0` quando exigido.
 
+### `ft_strncmp.c`
+
+**Função:** `ft_strncmp`
+
+Compara até `n` bytes de duas strings e retorna um valor menor, igual ou maior
+que zero dependendo da ordem lexicográfica dos primeiros caracteres diferentes.
+
+**Conceito aprendido:**
+
+- Limitar a comparação a no máximo `n` caracteres.
+- Parar ao encontrar o primeiro caractere diferente ou o fim de uma das strings.
+- Tratar a comparação como diferença de `unsigned char` para corresponder ao
+  comportamento da função padrão.
+
+**Ponto de atenção:**
+
+- O loop deve usar `i < n` para não ler além do limite especificado.
+- Ao chegar em `n` sem diferença, a função deve retornar `0`.
+- A comparação deve considerar o caractere nulo `\0` como parte da lógica de fim
+  de string.
+
 ## Como compilar
 
 Use:
