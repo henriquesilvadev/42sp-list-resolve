@@ -6,13 +6,15 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 08:23:09 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/13 08:36:32 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/16 07:54:57 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <stddef.h>
+
+size_t	ft_strlen(char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')
