@@ -43,9 +43,9 @@ Conta quantos caracteres existem em uma string até encontrar o caractere nulo
 
 **Ponto de atenção:**
 
-- A versão padrão de `strlen` retorna `size_t`. Esta implementação retorna
-  `int`, o que funciona para exercícios simples, mas pode ser limitado para
-  strings muito grandes.
+- A versão padrão de `strlen` retorna `size_t`. Nesta versão, a assinatura foi
+  ajustada para `size_t`, eliminando o problema de compatibilidade com strings
+  muito grandes.
 
 ### `ft_isupper.c`
 
@@ -96,10 +96,8 @@ Deveria verificar se o caractere recebido representa um dígito entre `'0'` e
 
 **Ponto de atenção:**
 
-- A implementação atual usa `c >= 0 && c <= 9`. Isso testa os valores numéricos
-  de 0 a 9, não os caracteres `'0'` a `'9'`.
-- Para seguir o comportamento esperado, a comparação deveria ser feita com
-  `c >= '0' && c <= '9'`.
+- A implementação foi corrigida para usar `c >= '0' && c <= '9'`, alinhando o
+  comportamento com a função padrão.
 
 ### `ft_isalnum.c`
 
@@ -115,8 +113,8 @@ Verifica se o caractere é alfanumérico, ou seja, se é letra ou dígito.
 
 **Ponto de atenção:**
 
-- Como depende de `ft_isdigit`, qualquer erro em `ft_isdigit` também afeta
-  `ft_isalnum`.
+- Como depende de `ft_isdigit`, a correção em `ft_isdigit` garante o comportamento
+  correto de `ft_isalnum`.
 
 ### `ft_isascii.c`
 
@@ -162,10 +160,8 @@ ponteiro para essa posição.
 
 - A função padrão `strchr` também deve conseguir encontrar o caractere nulo
   `\0` no final da string.
-- Na implementação atual, o `while (s[i])` para antes de testar o `\0`, então
-  `ft_strchr(s, '\0')` retorna `NULL`.
-- O bloco `if (s[i] == '\0') ;` não tem efeito prático, porque essa condição não
-  será verdadeira dentro do `while (s[i])`.
+- Esta versão foi corrigida para verificar o terminador após o loop e retornar
+  corretamente `ft_strchr(s, '\0')`.
 
 ### `ft_strrchr.c`
 
@@ -185,10 +181,8 @@ ponteiro para essa posição.
 
 - A função padrão `strrchr` também deve retornar o endereço do `\0` quando o
   caractere buscado for `\0`.
-- Na implementação atual, a verificação `if (uc == '\0')` está dentro do
-  `while (s[i])`, então ela retorna o caractere atual antes de chegar ao
-  terminador real da string. O ideal é tratar `\0` depois do loop ou percorrer
-  até incluir o terminador.
+- Esta versão foi corrigida para tratar o terminador após o loop, retornando o
+  endereço correto do `\0` quando exigido.
 
 ## Como compilar
 
