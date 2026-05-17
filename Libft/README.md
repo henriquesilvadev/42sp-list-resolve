@@ -1,8 +1,7 @@
 # Libft
+![42 São Paulo](https://img.shields.io/badge/42-São_Paulo-black?style=flat-square&logo=42)
 
 <p align="left">
-
-![42 São Paulo](https://img.shields.io/badge/42-São_Paulo-black?style=flat-square&logo=42)
   <img src="https://img.shields.io/badge/Language-C-00599C?style=for-the-badge&logo=c&logoColor=white" />
   <img src="https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge" />
 </p>
