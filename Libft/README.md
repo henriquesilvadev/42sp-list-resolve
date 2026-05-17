@@ -6,207 +6,20 @@
   <img src="https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge" />
 </p>
 
-Este projeto recria algumas funções da biblioteca padrão de C, usando apenas
-implementações próprias. A ideia principal é entender como funções básicas
-trabalham por baixo: comparação de caracteres, percorrimento de strings,
-ponteiros, retorno de endereços e organização de código em biblioteca estática.
-
-## Conceitos gerais aprendidos
-
-- Uma string em C é um array de `char` finalizado por `\0`.
-- Caracteres também podem ser comparados como números, usando seus códigos ASCII.
-- Funções de verificação normalmente retornam um valor diferente de zero para
-  verdadeiro e `0` para falso.
-- Ponteiros permitem retornar a posição exata de um caractere dentro de uma
-  string.
-- `NULL` representa ausência de endereço válido.
-- `unsigned char` ajuda a tratar corretamente valores recebidos como `int` em
-  funções que trabalham com caracteres.
-- O arquivo `libft.h` concentra os protótipos para que outras funções possam
-  usar a biblioteca.
-- O `Makefile` automatiza a compilação dos `.c`, a criação dos `.o` e a geração
-  da biblioteca `libft.a`.
-
-## Anotações por função
-
-### `ft_strlen.c`
-
-**Função:** `ft_strlen`
-
-Conta quantos caracteres existem em uma string até encontrar o caractere nulo
-`\0`.
-
-**Conceito aprendido:**
-
-- Percorrer uma string usando índice.
-- Entender que `\0` marca o fim da string.
-- Usar um contador para medir tamanho.
-
-**Ponto de atenção:**
-
-- A versão padrão de `strlen` retorna `size_t`. Nesta versão, a assinatura foi
-  ajustada para `size_t`, eliminando o problema de compatibilidade com strings
-  muito grandes.
-
-### `ft_isupper.c`
-
-**Função:** `ft_isupper`
-
-Verifica se o caractere recebido está entre `'A'` e `'Z'`.
-
-**Conceito aprendido:**
-
-- Caracteres maiúsculos ocupam uma faixa contínua na tabela ASCII.
-- Comparações com caracteres literais deixam o código mais legível do que usar
-  números como `65` e `90`.
-
-### `ft_islower.c`
-
-**Função:** `ft_islower`
-
-Verifica se o caractere recebido está entre `'a'` e `'z'`.
-
-**Conceito aprendido:**
-
-- Caracteres minúsculos também ocupam uma faixa contínua na tabela ASCII.
-- É possível criar funções pequenas e reutilizáveis para compor outras funções.
-
-### `ft_isalpha.c`
-
-**Função:** `ft_isalpha`
-
-Verifica se o caractere é uma letra, usando `ft_isupper` ou `ft_islower`.
-
-**Conceito aprendido:**
-
-- Reutilizar funções já criadas evita repetir lógica.
-- O operador `||` representa "ou lógico": basta uma das condições ser verdadeira.
-- Uma função pode ser construída combinando outras funções menores.
-
-### `ft_isdigit.c`
-
-**Função:** `ft_isdigit`
-
-Deveria verificar se o caractere recebido representa um dígito entre `'0'` e
-`'9'`.
-
-**Conceito aprendido:**
-
-- Dígitos também possuem uma faixa contínua na tabela ASCII.
-- Existe diferença entre o número inteiro `0` e o caractere `'0'`.
-
-**Ponto de atenção:**
-
-- A implementação foi corrigida para usar `c >= '0' && c <= '9'`, alinhando o
-  comportamento com a função padrão.
-
-### `ft_isalnum.c`
-
-**Função:** `ft_isalnum`
-
-Verifica se o caractere é alfanumérico, ou seja, se é letra ou dígito.
-
-**Conceito aprendido:**
-
-- Uma função pode representar uma regra maior combinando regras menores.
-- `ft_isalpha(c) || ft_isdigit(c)` expressa diretamente a ideia de "letra ou
-  número".
-
-**Ponto de atenção:**
-
-- Como depende de `ft_isdigit`, a correção em `ft_isdigit` garante o comportamento
-  correto de `ft_isalnum`.
-
-### `ft_isascii.c`
-
-**Função:** `ft_isascii`
-
-Verifica se o valor recebido está dentro da tabela ASCII padrão, entre `0` e
-`127`.
-
-**Conceito aprendido:**
-
-- ASCII padrão usa valores de 0 a 127.
-- Nem todo `int` recebido por uma função representa um caractere ASCII válido.
-
-### `ft_isprint.c`
-
-**Função:** `ft_isprint`
-
-Verifica se o caractere é imprimível, ou seja, se está entre espaço (`32`) e
-til (`126`) na tabela ASCII.
-
-**Conceito aprendido:**
-
-- Alguns caracteres ASCII são de controle e não aparecem visualmente na tela.
-- Caracteres imprimíveis começam no espaço e vão até `~`.
-
-### `ft_strchr.c`
-
-**Função:** `ft_strchr`
-
-Procura a primeira ocorrência de um caractere dentro de uma string e retorna um
-ponteiro para essa posição.
-
-**Conceito aprendido:**
-
-- Percorrer uma string caractere por caractere.
-- Comparar cada posição da string com o caractere procurado.
-- Retornar o endereço de uma posição usando `&s[i]`.
-- Fazer cast para retornar `char *` mesmo recebendo `const char *`.
-- Retornar `NULL` quando o caractere não é encontrado.
-- Converter `c` para `unsigned char` aproxima o comportamento da função padrão.
-
-**Ponto de atenção:**
-
-- A função padrão `strchr` também deve conseguir encontrar o caractere nulo
-  `\0` no final da string.
-- Esta versão foi corrigida para verificar o terminador após o loop e retornar
-  corretamente `ft_strchr(s, '\0')`.
-
-### `ft_strrchr.c`
-
-**Função:** `ft_strrchr`
-
-Procura a última ocorrência de um caractere dentro de uma string e retorna um
-ponteiro para essa posição.
-
-**Conceito aprendido:**
-
-- Guardar a última posição encontrada em uma variável auxiliar.
-- Continuar percorrendo a string mesmo depois de encontrar uma ocorrência.
-- Usar `NULL` como valor inicial para indicar que nada foi encontrado ainda.
-- Retornar o último endereço salvo ao final do loop.
-
-**Ponto de atenção:**
-
-- A função padrão `strrchr` também deve retornar o endereço do `\0` quando o
-  caractere buscado for `\0`.
-- Esta versão foi corrigida para tratar o terminador após o loop, retornando o
-  endereço correto do `\0` quando exigido.
-
-### `ft_strncmp.c`
-
-**Função:** `ft_strncmp`
-
-Compara até `n` bytes de duas strings e retorna um valor menor, igual ou maior
-que zero dependendo da ordem lexicográfica dos primeiros caracteres diferentes.
-
-**Conceito aprendido:**
-
-- Limitar a comparação a no máximo `n` caracteres.
-- Parar ao encontrar o primeiro caractere diferente ou o fim de uma das strings.
-- Tratar a comparação como diferença de `unsigned char` para corresponder ao
-  comportamento da função padrão.
-
-**Ponto de atenção:**
-
-- O loop deve usar `i < n` para não ler além do limite especificado.
-- Ao chegar em `n` sem diferença, a função deve retornar `0`.
-- A comparação deve considerar o caractere nulo `\0` como parte da lógica de fim
-  de string.
-
-## Como compilar
+This project recreates some functions from the C standard library using only custom implementations. The main idea is to understand how basic functions work under the hood: character comparison, string traversal, pointers, returning addresses, and organizing code into a static library.
+
+## General concepts learned
+
+- A string in C is an array of `char` terminated by `\0`.
+- Characters can also be compared as numbers using their ASCII codes.
+- Verification functions normally return a non-zero value for true and `0` for false.
+- Pointers allow returning the exact position of a character within a string.
+- `NULL` represents the absence of a valid address.
+- `unsigned char` helps correctly handle values received as `int` in functions that work with characters.
+- The `libft.h` file concentrates the prototypes so that other functions can use the library.
+- The `Makefile` automates the compilation of `.c` files, the creation of `.o` files, and the generation of the `libft.a` library.
+
+## How to compile
 
 Use:
 
@@ -214,35 +27,37 @@ Use:
 make
 ```
 
-Isso gera a biblioteca estática:
+This generates the static library:
 
 ```sh
 libft.a
 ```
 
-Para remover os arquivos objeto:
+To remove object files:
 
 ```sh
 make clean
 ```
 
-Para remover os objetos e a biblioteca:
+To remove objects and library:
 
 ```sh
 make fclean
 ```
 
-Para recompilar do zero:
+To recompile from scratch:
 
 ```sh
 make re
 ```
 
-## Checklist de estudo
+## Study checklist
 
-- Conferir se cada função retorna o mesmo resultado da função padrão
-  correspondente.
-- Testar casos comuns e casos de borda, como string vazia e busca por `\0`.
-- Comparar caracteres usando literais (`'0'`, `'A'`, `'a'`) quando isso deixar o
-  código mais claro.
-- Manter os protótipos atualizados em `libft.h`.
+- Check if each function returns the same result as the corresponding standard function.
+- Test common cases and edge cases, such as empty string and searching for `\0`.
+- Compare characters using literals (`'0'`, `'A'`, `'a'`) when it makes the code clearer.
+- Keep prototypes updated in `libft.h`.
+
+## License
+
+This project is part of the 42 curriculum and intended for educational use.
