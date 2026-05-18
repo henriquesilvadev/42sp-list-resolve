@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 14:07:15 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/18 10:03:31 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/18 13:03:08 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,4 @@ char	*ft_strchr(const char *s, int c)
 	if (s[i] == uc)
 		return ((char *) &s[i]);
 	return (NULL);
-}
-
-int	main(void)
-{
-	char	*result;
-	char	*str;
-
-	str = "MESTRE";
-	result = ft_strchr(str, 'T');
-	if (result)
-		printf("Encontrado: %s\n", result);
-	else
-		printf("Não encontrado\n");
-	return (0);
 }
