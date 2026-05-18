@@ -5,21 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 12:42:43 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/16 14:44:48 by hhonorio         ###   ########.fr       */
+/*   Created: 2026/05/17 09:39:31 by hhonorio          #+#    #+#             */
+/*   Updated: 2026/05/17 09:45:56 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void	*memset(void *s, int c, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	s_byte;
+	unsigned char	*tmp;
 
-	s_byte = (unsigned char)*s;
-	while (n > 0)
+	tmp = (unsigned char *) b;
+	while (len > 0)
 	{
-		s_byte++;
-		n--;
+		*(tmp++) = (unsigned char) c;
+		len--;
 	}
+	return (b);
 }
