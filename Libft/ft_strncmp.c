@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 08:07:03 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/18 11:04:58 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/18 13:08:32 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,4 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	}
 	return (0);
-}
-
-int	main(void)
-{
-	printf("%d\n", ft_strncmp("MESTRE", "MESTRE", 6));
-	printf("%d\n", ft_strncmp("MESTRE", "MESTRO", 6));
-	printf("%d\n", ft_strncmp("MESTRO", "MESTRE", 6));
-	printf("%d\n", ft_strncmp("MESTRE", "MESTRE", 3));
-	printf("%d\n", ft_strncmp("ABC", "ABD", 2));
-	printf("%d\n", ft_strncmp("", "", 5));
-	printf("%d\n", ft_strncmp("ABC", "", 3));
 }
