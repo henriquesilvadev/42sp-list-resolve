@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:28:40 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/18 10:06:12 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/21 12:59:34 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # include <stddef.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 /* *************************************** */
 /* Mandatory Functions                     */
@@ -31,16 +32,32 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+int		ft_isspace(int c);
 
 /* *************************************** */
 /* String Manipulation                     */
 /* *************************************** */
 
-size_t	ft_strlen(char *str);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
+size_t	ft_strlen(const char *str);
+char	*ft_strchr(const char *str, int c);
+char	*ft_strrchr(const char *str, int c);
+int		ft_strncmp(const char *str1, const char *str2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+
+/* *************************************** */
+/* Conversions                             */
+/* *************************************** */
+
+int		ft_atoi(const char *str);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+
+/* *************************************** */
+/* Functons with malloc                   */
+/* *************************************** */
+
+char	*ft_strdup(const char *str);
+void	*ft_calloc(size_t count, size_t size);
 
 /* *************************************** */
 /* Memory Manipulation                     */
@@ -50,5 +67,12 @@ void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t len);
+
+/* *************************************** */
+/* Additional Functions                    */
+/* *************************************** */
+
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+char	*ft_strjoin(const char *s1, const char *s2);
 
 #endif

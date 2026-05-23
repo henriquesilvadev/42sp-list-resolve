@@ -6,9 +6,11 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 07:33:39 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/15 07:35:00 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/19 15:11:28 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isupper(int c)
 {

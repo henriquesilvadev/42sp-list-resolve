@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/15 07:37:15 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/19 15:12:41 by hhonorio         ###   ########.fr       */
+/*   Created: 2026/05/21 10:39:24 by hhonorio          #+#    #+#             */
+/*   Updated: 2026/05/21 12:50:24 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_islower(int c)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	return (c >= 'a' && c <= 'z');
+	int		len1;
+	int		len2;
+	char	*result;
+
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	result = malloc(len1 + len2 + 1);
+	if (!result)
+		return (NULL);
+	ft_memcpy(result, s1, len1);
+	ft_memcpy(result + len1, s2, len2 + 1);
+	return (result);
 }

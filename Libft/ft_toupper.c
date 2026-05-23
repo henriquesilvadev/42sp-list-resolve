@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/14 17:06:26 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/19 15:11:59 by hhonorio         ###   ########.fr       */
+/*   Created: 2026/05/19 15:04:26 by hhonorio          #+#    #+#             */
+/*   Updated: 2026/05/19 15:08:29 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+int	ft_toupper(int c)
 {
-	return (c >= 32 && c <= 126);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (0);
 }

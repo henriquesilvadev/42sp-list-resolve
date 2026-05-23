@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/14 17:06:26 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/19 15:11:59 by hhonorio         ###   ########.fr       */
+/*   Created: 2026/05/21 08:47:28 by hhonorio          #+#    #+#             */
+/*   Updated: 2026/05/23 08:35:37 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+int	ft_isspace(int c)
 {
-	return (c >= 32 && c <= 126);
+	if ((c >= 9 && c <= 13) || c == 32)
+		return (1);
+	return (0);
 }

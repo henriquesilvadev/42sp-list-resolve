@@ -13,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $@ $^
 
-%.o: %.c
+%.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

@@ -1,18 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/14 17:06:26 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/19 15:11:59 by hhonorio         ###   ########.fr       */
+/*   Created: 2026/05/23 12:57:16 by hhonorio          #+#    #+#             */
+/*   Updated: 2026/05/23 13:01:49 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isprint(int c)
+char	**ft_split(const char *s, char c)
 {
-	return (c >= 32 && c <= 126);
 }
