@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/24 08:30:38 by hhonorio          #+#    #+#              #
-#    Updated: 2026/05/24 13:54:46 by hhonorio         ###   ########.fr        #
+#    Updated: 2026/05/24 14:26:09 by hhonorio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ all: $(BINS)
 %: %_test.c
 	@$(CC) $(CFLAGS) $< $(LIBFT_SRCS) -o $@ 2>&1 | \
 		sed 's/.*warning.*/$(YELLOW)&$(RESET)/' | \
-		sed 's/.*error.*/$(RED)&$(RESET)/'
+		sed 's/.*error.*/$(RED)&$(RESET)/'; true
 
 run: all
 	@FAILED=0; \
@@ -37,6 +37,11 @@ run: all
 		echo "$(YELLOW)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
 		echo "$(YELLOW)  $$bin$(RESET)"; \
 		echo "$(YELLOW)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		if [ ! -f ./$$bin ]; then \
+			echo "$(RED)  $$bin: falhou ao compilar$(RESET)"; \
+			FAILED=1; \
+			continue; \
+		fi; \
 		./$$bin > /tmp/$$bin.out 2>&1; STATUS=$$?; \
 		cat /tmp/$$bin.out | \
 			sed 's/.*PASS.*/$(GREEN)&$(RESET)/' | \
@@ -57,6 +62,10 @@ run: all
 		printf "  \033[0;31m%-20s | %-24s | %s\033[0m\n" "Função" "Teste" "Descrição do erro"; \
 		printf "  \033[0;31m%-20s-+-%-24s-+-%s\033[0m\n" "--------------------" "------------------------" "-------------------------------------"; \
 		for bin in $(BINS); do \
+			if [ ! -f ./$$bin ]; then \
+				printf "  \033[0;31m%-20s | %-24s | %s\033[0m\n" "$$bin" "-" "falhou ao compilar"; \
+				continue; \
+			fi; \
 			if [ -f /tmp/$$bin.out ] && grep -q "^FAIL" /tmp/$$bin.out 2>/dev/null; then \
 				fname="$$bin"; exp=""; got=""; \
 				while IFS= read -r ln; do \
