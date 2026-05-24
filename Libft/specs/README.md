@@ -91,7 +91,7 @@ int main(int argc, char **argv)
 | `ft_memcpy` | `void *ft_memcpy(void *dst, const void *src, size_t n)` | ✅ |
 | `ft_memmove` | `void *ft_memmove(void *dst, const void *src, size_t len)` | ✅ |
 | `ft_strlcpy` | `size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)` | ✅ |
-| `ft_strlcat` | `size_t ft_strlcat(char *dst, const char *src, size_t dstsize)` | ⬜ |
+| `ft_strlcat` | `size_t ft_strlcat(char *dst, const char *src, size_t dstsize)` | ✅ |
 | `ft_toupper` | `int ft_toupper(int c)` | ✅ |
 | `ft_tolower` | `int ft_tolower(int c)` | ✅ |
 | `ft_strchr` | `char *ft_strchr(const char *s, int c)` | ✅ |
