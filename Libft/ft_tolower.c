@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 15:52:15 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/19 15:54:51 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/24 13:51:54 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	if (c >= 65 && c <= 90)
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
-	return (0);
+	return (c);
 }

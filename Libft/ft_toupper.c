@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 15:04:26 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/19 15:08:29 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/24 13:52:16 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	if (c >= 97 && c <= 122)
+	if (c >= 'a' && c <= 'z')
 		return (c - 32);
-	return (0);
+	return (c);
 }
