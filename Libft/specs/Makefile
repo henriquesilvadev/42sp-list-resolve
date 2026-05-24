@@ -6,7 +6,7 @@
 #    By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/24 08:30:38 by hhonorio          #+#    #+#              #
-#    Updated: 2026/05/24 09:21:41 by hhonorio         ###   ########.fr        #
+#    Updated: 2026/05/24 13:54:46 by hhonorio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ run: all
 		echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
 		echo "$(GREEN)  All tests passed!$(RESET)"; \
 		echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
-		open -a "Google Chrome" "img/leonardo dicaprio bravo GIF.gif"; \
+		open "img/leonardo dicaprio bravo GIF.gif"; \
 	else \
 		echo "$(RED)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
 		echo "$(RED)  Some tests failed!$(RESET)"; \
@@ -78,7 +78,7 @@ run: all
 		done; \
 		printf "  \033[0;31m%-20s-+-%-24s-+-%s\033[0m\n" "--------------------" "------------------------" "-------------------------------------"; \
 		echo ""; \
-		open -a "Google Chrome" "img/Fabio Porchat GIF by Porta Dos Fundos.gif"; \
+		open "img/Fabio Porchat GIF by Porta Dos Fundos.gif"; \
 	fi
 
 clean:
