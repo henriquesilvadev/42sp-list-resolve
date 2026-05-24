@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 09:36:03 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/23 11:24:11 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/24 09:19:08 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ static char	*malloc_result(int len);
 char	*ft_itoa(int n)
 {
 	long	nb;
-	int		sign;
 	int		len;
 	char	*str;
 
+	nb = n;
 	if (nb < 0)
 		nb = -nb;
 	len = count_digits(nb) + (n < 0);
