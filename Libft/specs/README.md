@@ -98,7 +98,7 @@ int main(int argc, char **argv)
 | `ft_strrchr` | `char *ft_strrchr(const char *s, int c)` | ✅ |
 | `ft_strncmp` | `int ft_strncmp(const char *s1, const char *s2, size_t n)` | ✅ |
 | `ft_memchr` | `void *ft_memchr(const void *s, int c, size_t n)` | ✅ |
-| `ft_memcmp` | `int ft_memcmp(const void *s1, const void *s2, size_t n)` | ⬜ |
+| `ft_memcmp` | `int ft_memcmp(const void *s1, const void *s2, size_t n)` | ✅ |
 | `ft_strnstr` | `char *ft_strnstr(const char *haystack, const char *needle, size_t len)` | ✅ |
 | `ft_atoi` | `int ft_atoi(const char *str)` | ✅ |
 
