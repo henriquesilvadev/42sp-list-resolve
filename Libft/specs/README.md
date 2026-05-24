@@ -140,7 +140,7 @@ int main(int argc, char **argv)
 
 | Section | Done | Total |
 |---|:---:|:---:|
-| Part 1 — Libc | 18 | 21 |
-| Part 2 — Additional | 8 | 13 |
+| Part 1 — Libc | 21 | 21 |
+| Part 2 — Additional | 7 | 13 |
 | Bonus — Linked List | 0 | 9 |
 | **Total** | **26** | **43** |
