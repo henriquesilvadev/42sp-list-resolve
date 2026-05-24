@@ -21,7 +21,7 @@ char	*ft_itoa(int n)
 	int		len;
 	char	*str;
 
-	nb = n;
+	nb = (long)n;
 	if (nb < 0)
 		nb = -nb;
 	len = count_digits(nb) + (n < 0);
@@ -43,14 +43,11 @@ static int	count_digits(long nbr)
 {
 	int	count;
 
+	if (nbr == 0)
+		return (1);
 	count = 0;
 	if (nbr > 0)
-	{
-		count++;
 		nbr = -nbr;
-	}
-	if (nbr == 0)
-		count++;
 	while (nbr != 0)
 	{
 		nbr /= 10;

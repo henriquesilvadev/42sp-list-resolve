@@ -53,6 +53,31 @@ run: all
 		echo "$(RED)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
 		echo "$(RED)  Some tests failed!$(RESET)"; \
 		echo "$(RED)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		echo ""; \
+		printf "  \033[0;31m%-20s | %-24s | %s\033[0m\n" "Função" "Teste" "Descrição do erro"; \
+		printf "  \033[0;31m%-20s-+-%-24s-+-%s\033[0m\n" "--------------------" "------------------------" "-------------------------------------"; \
+		for bin in $(BINS); do \
+			if [ -f /tmp/$$bin.out ] && grep -q "^FAIL" /tmp/$$bin.out 2>/dev/null; then \
+				fname="$$bin"; exp=""; got=""; \
+				while IFS= read -r ln; do \
+					case "$$ln" in \
+						"Expected: "*) exp="$${ln#Expected: }" ;; \
+						*"Got: "*) got="$${ln##*Got: }" ;; \
+						FAIL*) \
+							tn=$$(echo "$$ln" | sed 's/^FAIL \([^:]*\):.*/\1/'); \
+							if [ -n "$$exp" ]; then \
+								desc="esperado '$$exp'  obtido '$$got'"; exp=""; got=""; \
+							else \
+								desc=$$(echo "$$ln" | sed 's/^FAIL [^:]*: //' | sed 's/ ([^)]*)$$//'); \
+							fi; \
+							printf "  \033[0;31m%-20s | %-24s | %s\033[0m\n" "$$fname" "$$tn" "$$desc"; \
+							fname="" ;; \
+					esac; \
+				done < /tmp/$$bin.out; \
+			fi; \
+		done; \
+		printf "  \033[0;31m%-20s-+-%-24s-+-%s\033[0m\n" "--------------------" "------------------------" "-------------------------------------"; \
+		echo ""; \
 		open -a "Google Chrome" "img/Fabio Porchat GIF by Porta Dos Fundos.gif"; \
 	fi
 
