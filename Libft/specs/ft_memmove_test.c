@@ -1,6 +1,5 @@
 #include "greatest.h"
 #include "../libft.h"
-#include <string.h>
 
 TEST	test_no_overlap(void)
 {

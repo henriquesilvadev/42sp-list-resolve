@@ -1,6 +1,5 @@
 #include "greatest.h"
 #include "../libft.h"
-#include <stdlib.h>
 
 TEST	test_duplicates(void)
 {
