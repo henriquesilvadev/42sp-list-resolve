@@ -32,18 +32,29 @@ all: $(BINS)
 		sed 's/.*error.*/$(RED)&$(RESET)/'
 
 run: all
-	@for bin in $(BINS); do \
+	@FAILED=0; \
+	for bin in $(BINS); do \
 		echo "$(YELLOW)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
-		echo "$(YELLOW)  ☕ $$bin$(RESET)"; \
+		echo "$(YELLOW)  $$bin$(RESET)"; \
 		echo "$(YELLOW)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
-		./$$bin 2>&1 | \
+		./$$bin > /tmp/$$bin.out 2>&1; STATUS=$$?; \
+		cat /tmp/$$bin.out | \
 			sed 's/.*PASS.*/$(GREEN)&$(RESET)/' | \
 			sed 's/.*FAIL.*/$(RED)&$(RESET)/'; \
+		if [ $$STATUS -ne 0 ]; then FAILED=1; fi; \
 	done; \
 	echo ""; \
-	echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
-	echo "$(GREEN)  ☕ Brew complete — all tests done!$(RESET)"; \
-	echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"
+	if [ $$FAILED -eq 0 ]; then \
+		echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		echo "$(GREEN)  All tests passed!$(RESET)"; \
+		echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		open -a "Google Chrome" "img/leonardo dicaprio bravo GIF.gif"; \
+	else \
+		echo "$(RED)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		echo "$(RED)  Some tests failed!$(RESET)"; \
+		echo "$(RED)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		open -a "Google Chrome" "img/Fabio Porchat GIF by Porta Dos Fundos.gif"; \
+	fi
 
 clean:
 	rm -f $(BINS)
