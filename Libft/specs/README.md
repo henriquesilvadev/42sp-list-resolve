@@ -142,5 +142,5 @@ int main(int argc, char **argv)
 |---|:---:|:---:|
 | Part 1 — Libc | 21 | 21 |
 | Part 2 — Additional | 13 | 13 |
-| Bonus — Linked List | 1 | 9 |
-| **Total** | **34** | **43** |
+| Bonus — Linked List | 2 | 9 |
+| **Total** | **36** | **43** |
