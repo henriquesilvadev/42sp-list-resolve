@@ -124,7 +124,7 @@ int main(int argc, char **argv)
 
 | Function | Prototype | Status |
 |---|---|:---:|
-| `ft_lstnew` | `t_list *ft_lstnew(void *content)` | ⬜ |
+| `ft_lstnew` | `t_list *ft_lstnew(void *content)` | ✅ |
 | `ft_lstadd_front` | `void ft_lstadd_front(t_list **lst, t_list *new)` | ⬜ |
 | `ft_lstsize` | `int ft_lstsize(t_list *lst)` | ⬜ |
 | `ft_lstlast` | `t_list *ft_lstlast(t_list *lst)` | ⬜ |
@@ -142,5 +142,5 @@ int main(int argc, char **argv)
 |---|:---:|:---:|
 | Part 1 — Libc | 21 | 21 |
 | Part 2 — Additional | 13 | 13 |
-| Bonus — Linked List | 0 | 9 |
+| Bonus — Linked List | 1 | 9 |
 | **Total** | **34** | **43** |

@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:28:40 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/25 10:48:44 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/25 11:58:46 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,22 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+/* *************************************** */
+/* Struct list                             */
+/* *************************************** */
+
+typedef struct _list
+{
+	void			*content;
+	struct s_list	*next;
+
+}	t_list;
+
+/* *************************************** */
+/* Linked List                             */
+/* *************************************** */
+
+t_list	*ft_lstnew(void *content);
 
 #endif
