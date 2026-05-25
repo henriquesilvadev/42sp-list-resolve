@@ -117,7 +117,7 @@ int main(int argc, char **argv)
 | `ft_striteri` | `void ft_striteri(char *s, void (*f)(unsigned int, char *))` | ✅ |
 | `ft_putchar_fd` | `void ft_putchar_fd(char c, int fd)` | ✅ |
 | `ft_putstr_fd` | `void ft_putstr_fd(char *s, int fd)` | ✅ |
-| `ft_putendl_fd` | `void ft_putendl_fd(char *s, int fd)` | ⬜ |
+| `ft_putendl_fd` | `void ft_putendl_fd(char *s, int fd)` | ✅ |
 | `ft_putnbr_fd` | `void ft_putnbr_fd(int n, int fd)` | ⬜ |
 
 ### Bonus — Linked List (9 functions)
@@ -141,6 +141,6 @@ int main(int argc, char **argv)
 | Section | Done | Total |
 |---|:---:|:---:|
 | Part 1 — Libc | 21 | 21 |
-| Part 2 — Additional | 11 | 13 |
+| Part 2 — Additional | 12 | 13 |
 | Bonus — Linked List | 0 | 9 |
-| **Total** | **32** | **43** |
+| **Total** | **33** | **43** |
