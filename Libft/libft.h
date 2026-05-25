@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:28:40 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/25 11:58:46 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/25 15:05:37 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	ft_putnbr_fd(int n, int fd);
 /* Struct list                             */
 /* *************************************** */
 
-typedef struct _list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -106,5 +106,6 @@ typedef struct _list
 /* *************************************** */
 
 t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif

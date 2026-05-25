@@ -125,7 +125,7 @@ int main(int argc, char **argv)
 | Function | Prototype | Status |
 |---|---|:---:|
 | `ft_lstnew` | `t_list *ft_lstnew(void *content)` | ✅ |
-| `ft_lstadd_front` | `void ft_lstadd_front(t_list **lst, t_list *new)` | ⬜ |
+| `ft_lstadd_front` | `void ft_lstadd_front(t_list **lst, t_list *new)` | ✅ |
 | `ft_lstsize` | `int ft_lstsize(t_list *lst)` | ⬜ |
 | `ft_lstlast` | `t_list *ft_lstlast(t_list *lst)` | ⬜ |
 | `ft_lstadd_back` | `void ft_lstadd_back(t_list **lst, t_list *new)` | ⬜ |
