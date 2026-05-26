@@ -6,7 +6,7 @@
 #    By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/24 08:30:38 by hhonorio          #+#    #+#              #
-#    Updated: 2026/05/25 15:14:34 by hhonorio         ###   ########.fr        #
+#    Updated: 2026/05/26 12:16:33 by hhonorio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,7 +90,56 @@ run: all
 		open "img/Fabio Porchat GIF by Porta Dos Fundos.gif"; \
 	fi
 
+valgrind: clean all
+	@LEAKS=0; \
+	echo ""; \
+	echo "$(YELLOW)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+	echo "$(YELLOW)  Memory Leak Report$(RESET)"; \
+	echo "$(YELLOW)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+	echo ""; \
+	printf "  %-20s | %s\n" "Função" "Status"; \
+	printf "  %-20s-+-%s\n" "--------------------" "-------------------------------------"; \
+	for bin in $(BINS); do \
+		if [ ! -f ./$$bin ]; then \
+			printf "  %-20s | %s\n" "$$bin" "falhou ao compilar"; \
+			continue; \
+		fi; \
+		valgrind --leak-check=full --error-exitcode=1 ./$$bin > /tmp/$$bin.valgrind 2>&1; VSTATUS=$$?; \
+		LEAKED=$$(grep "definitely lost:" /tmp/$$bin.valgrind | awk '{print $$4}' | tr -d ','); \
+		INDIRECT=$$(grep "indirectly lost:" /tmp/$$bin.valgrind | awk '{print $$4}' | tr -d ','); \
+		ERRORS=$$(grep "ERROR SUMMARY:" /tmp/$$bin.valgrind | awk '{print $$4}'); \
+		if [ "$$VSTATUS" -eq 0 ] && [ "$$ERRORS" = "0" ]; then \
+			printf "  $(GREEN)%-20s | ✓ no leaks$(RESET)\n" "$$bin"; \
+		else \
+			printf "  $(RED)%-20s | ✗ leaked: %s bytes directly, %s indirectly$(RESET)\n" "$$bin" "$${LEAKED:-0}" "$${INDIRECT:-0}"; \
+			LEAKS=1; \
+		fi; \
+	done; \
+	echo ""; \
+	if [ $$LEAKS -eq 0 ]; then \
+		echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		echo "$(GREEN)  No memory leaks found!$(RESET)"; \
+		echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		open "img/Images Repair GIF by getflexseal.gif"; \
+	else \
+		echo "$(RED)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		echo "$(RED)  Memory leaks detected!$(RESET)"; \
+		echo "$(RED)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		echo ""; \
+		echo "  Run $(YELLOW)make valgrind_verbose$(RESET) for full details."; \
+		open "img/Water Fail GIF.gif"; \
+	fi
+
+valgrind_verbose: all
+	@for bin in $(BINS); do \
+		echo "$(YELLOW)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		echo "$(YELLOW)  $$bin$(RESET)"; \
+		echo "$(YELLOW)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$$bin 2>&1; \
+		echo ""; \
+	done
+
 clean:
 	rm -f $(BINS)
 
-.PHONY: all run clean
+.PHONY: all run valgrind valgrind_verbose clean
