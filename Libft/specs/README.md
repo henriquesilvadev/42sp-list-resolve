@@ -132,7 +132,7 @@ int main(int argc, char **argv)
 | `ft_lstdelone` | `void ft_lstdelone(t_list *lst, void (*del)(void *))` | ✅ |
 | `ft_lstclear` | `void ft_lstclear(t_list **lst, void (*del)(void *))` | ✅ |
 | `ft_lstiter` | `void ft_lstiter(t_list *lst, void (*f)(void *))` | ✅ |
-| `ft_lstmap` | `t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))` | ⬜ |
+| `ft_lstmap` | `t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))` | ✅ |
 
 ---
 
@@ -142,5 +142,5 @@ int main(int argc, char **argv)
 |---|:---:|:---:|
 | Part 1 — Libc | 21 | 21 |
 | Part 2 — Additional | 13 | 13 |
-| Bonus — Linked List | 8 | 9 |
-| **Total** | **42** | **43** |
+| Bonus — Linked List | 9 | 9 |
+| **Total** | **43** | **43** |
