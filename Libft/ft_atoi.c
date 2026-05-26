@@ -16,11 +16,13 @@ int	ft_atoi(const char *str)
 {
 	int	result;
 	int	sign;
-	int	i;
+	size_t	i;
 
 	result = 0;
 	sign = 1;
 	i = 0;
+	if (!str)
+		return (0);
 	while (ft_isspace(str[i]))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
