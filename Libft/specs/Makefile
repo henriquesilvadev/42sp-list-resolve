@@ -6,7 +6,7 @@
 #    By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/24 08:30:38 by hhonorio          #+#    #+#              #
-#    Updated: 2026/05/26 12:16:33 by hhonorio         ###   ########.fr        #
+#    Updated: 2026/05/26 15:48:22 by hhonorio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,6 +90,50 @@ run: all
 		open "img/Fabio Porchat GIF by Porta Dos Fundos.gif"; \
 	fi
 
+norminette:
+	@NORM_FAILED=0; \
+	echo ""; \
+	echo "$(YELLOW)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+	echo "$(YELLOW)  Norminette Report$(RESET)"; \
+	echo "$(YELLOW)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+	echo ""; \
+	printf "  %-20s | %s\n" "Arquivo" "Status"; \
+	printf "  %-20s-+-%s\n" "--------------------" "-------------------------------------"; \
+	for file in $(LIBFT_SRCS) ../libft.h; do \
+		fname=$$(basename $$file); \
+		norminette $$file > /tmp/norm_$$fname.out 2>&1; \
+		if grep -q "Error" /tmp/norm_$$fname.out; then \
+			printf "  $(RED)%-20s | ✗ norminette error$(RESET)\n" "$$fname"; \
+			NORM_FAILED=1; \
+		else \
+			printf "  $(GREEN)%-20s | ✓ ok$(RESET)\n" "$$fname"; \
+		fi; \
+	done; \
+	echo ""; \
+	if [ $$NORM_FAILED -eq 0 ]; then \
+		echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		echo "$(GREEN)  Norminette passed!$(RESET)"; \
+		echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		open "img/No Problem Yes GIF by Vevo.gif"; \
+	else \
+		echo "$(RED)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		echo "$(RED)  Norminette errors found!$(RESET)"; \
+		echo "$(RED)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		echo ""; \
+		echo "  Run $(YELLOW)make norminette_verbose$(RESET) for full details."; \
+		open "img/Cry Baby Crying GIF by Luis Ricardo.gif"; \
+	fi
+
+norminette_verbose:
+	@for file in $(LIBFT_SRCS) ../libft.h; do \
+		fname=$$(basename $$file); \
+		echo "$(YELLOW)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		echo "$(YELLOW)  $$fname$(RESET)"; \
+		echo "$(YELLOW)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"; \
+		norminette $$file 2>&1; \
+		echo ""; \
+	done
+
 valgrind: clean all
 	@LEAKS=0; \
 	echo ""; \
@@ -142,4 +186,4 @@ valgrind_verbose: all
 clean:
 	rm -f $(BINS)
 
-.PHONY: all run valgrind valgrind_verbose clean
+.PHONY: all run norminette norminette_verbose valgrind valgrind_verbose clean
