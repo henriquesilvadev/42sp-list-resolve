@@ -42,7 +42,7 @@ Each function gets its own binary. On `make run`, every binary runs in sequence 
 ---
 
 ## Test Structure
-
+t_list *ft_lstlast(t_list *lst)
 Each test file follows this pattern:
 
 ```c
@@ -127,7 +127,7 @@ int main(int argc, char **argv)
 | `ft_lstnew` | `t_list *ft_lstnew(void *content)` | ✅ |
 | `ft_lstadd_front` | `void ft_lstadd_front(t_list **lst, t_list *new)` | ✅ |
 | `ft_lstsize` | `int ft_lstsize(t_list *lst)` | ✅ |
-| `ft_lstlast` | `t_list *ft_lstlast(t_list *lst)` | ⬜ |
+| `ft_lstlast` | `t_list *ft_lstlast(t_list *lst)` | ✅ |
 | `ft_lstadd_back` | `void ft_lstadd_back(t_list **lst, t_list *new)` | ⬜ |
 | `ft_lstdelone` | `void ft_lstdelone(t_list *lst, void (*del)(void *))` | ⬜ |
 | `ft_lstclear` | `void ft_lstclear(t_list **lst, void (*del)(void *))` | ⬜ |
@@ -142,5 +142,5 @@ int main(int argc, char **argv)
 |---|:---:|:---:|
 | Part 1 — Libc | 21 | 21 |
 | Part 2 — Additional | 13 | 13 |
-| Bonus — Linked List | 3 | 9 |
-| **Total** | **37** | **43** |
+| Bonus — Linked List | 4 | 9 |
+| **Total** | **38** | **43** |
