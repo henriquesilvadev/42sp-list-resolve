@@ -11,13 +11,14 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <complex.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
 	char			*str;
 
+	if (!s || !f)
+		return (NULL);
 	str = malloc(ft_strlen(s) + 1);
 	if (!str)
 		return (NULL);
