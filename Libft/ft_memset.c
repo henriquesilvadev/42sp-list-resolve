@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 09:39:31 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/18 12:53:00 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/27 09:33:44 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*tmp;
 
-	if (!b)
-		return (NULL);
 	tmp = (unsigned char *) b;
 	while (len > 0)
 	{
