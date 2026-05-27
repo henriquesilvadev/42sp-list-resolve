@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 10:18:57 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/18 13:00:36 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/27 09:30:47 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*c_dst;
 	size_t	i;
 
-	if (!dst && !src)
-		return (NULL);
 	c_src = (unsigned char *) src;
 	c_dst = (unsigned char *) dst;
 	i = 0;
