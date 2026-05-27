@@ -17,7 +17,7 @@ static int	is_charset(char c, const char *set);
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	size_t	i;
-	size_t	j;
+	int		j;
 	size_t	len;
 	char	*str;
 
@@ -30,7 +30,9 @@ char	*ft_strtrim(const char *s1, const char *set)
 	j--;
 	while (s1[i] && is_charset(s1[i], set))
 		i++;
-	while (j > i && is_charset(s1[j], set))
+	if (i > j)
+		return (ft_strdup(""));
+	while (j >= i && is_charset(s1[j], set))
 		j--;
 	len = j - i + 1;
 	str = malloc(len + 1);
