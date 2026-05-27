@@ -52,8 +52,6 @@ SRCS = ft_atoi.c \
 
 OBJS = $(SRCS:.c=.o)
 
-.PHONY: all clean fclean re
-
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -69,3 +67,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
