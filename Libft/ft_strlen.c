@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 08:23:09 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/21 07:30:07 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/27 10:36:32 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
-	if (!str)
-		return (0);
 	i = 0;
 	while (str[i])
 		i++;
