@@ -17,7 +17,7 @@ static int	is_charset(char c, const char *set);
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	size_t	i;
-	int		j;
+	size_t	j;
 	size_t	len;
 	char	*str;
 
