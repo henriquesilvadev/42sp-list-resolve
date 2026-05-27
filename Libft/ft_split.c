@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <complex.h>
 
 static int	word_counts(const char *str, char c);
 static char	**free_str(char **str, size_t j, int check);
@@ -23,7 +22,11 @@ char	**ft_split(char const *s, char c)
 	size_t	start;
 	char	**str;
 
+	if (!s)
+		return (NULL);
 	str = malloc(sizeof(char *) * (word_counts(s, c) + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
 	j = 0;
 	start = 0;
