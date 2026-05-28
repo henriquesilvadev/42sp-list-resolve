@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 15:02:44 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/27 10:30:57 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/28 10:32:41 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	result;
 
 	i = 0;
-	while (dst[i])
+	while (i < dstsize && dst[i])
 		i++;
 	dst_len = i;
 	result = dst_len + ft_strlen(src);
-	if (dst_len >= dstsize)
+	if (dstsize == 0 || dst_len >= dstsize)
 		return (result);
 	i = 0;
 	while (src[i] && dst_len + i < dstsize - 1)

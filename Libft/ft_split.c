@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 17:17:10 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/27 10:19:48 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/28 10:53:13 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	**ft_split(char const *s, char c)
 		while (s[i] == c)
 			i++;
 		if (!s[i])
-			return (free_str(str, j));
+			break ;
 		start = i;
 		while (s[i] != c && s[i])
 			i++;
