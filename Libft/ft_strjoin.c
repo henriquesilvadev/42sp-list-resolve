@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 10:39:24 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/21 12:50:24 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/27 11:00:00 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
-	size_t		len1;
-	size_t		len2;
+	size_t	len1;
+	size_t	len2;
 	char	*result;
 
 	if (s1 == NULL || s2 == NULL)

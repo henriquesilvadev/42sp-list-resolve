@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:28:40 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/27 07:25:26 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/28 09:10:42 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdint.h>
+# include <limits.h>
 
 /* *************************************** */
 /* Mandatory Functions                     */

@@ -6,16 +6,17 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 11:56:44 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/27 07:51:45 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/28 08:05:49 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int	result;
-	int	sign;
+	int		result;
+	int		sign;
 	size_t	i;
 
 	result = 0;

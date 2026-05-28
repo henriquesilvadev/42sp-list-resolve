@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 13:00:30 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/23 12:35:53 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/27 11:01:19 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size_t	len;
 	char	*str;
 
-	if (!s1 || !set)
-		return (NULL);
 	i = 0;
 	j = ft_strlen(s1);
 	if (j == 0)

@@ -60,4 +60,32 @@ make re
 
 ## License
 
-This project is part of the 42 curriculum and intended for educational use.
+This project is part of the 42 curriculu#include "libft.h"
+
+int	ft_atoi(const char *str)
+{
+	int	result;
+	int	sign;
+	size_t	i;
+
+	result = 0;
+	sign = 1;
+	i = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (str[i] && ft_isdigit(str[i]))
+	{
+		result *= 10;
+		result += str[i] - '0';
+		i++;
+	}
+	result *= sign;
+	return (result);
+}
+m and intended for educational use.
