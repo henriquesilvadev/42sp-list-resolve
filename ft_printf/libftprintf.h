@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 16:32:11 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/31 08:51:26 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/05/31 11:57:23 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 # include "libft/libft.h"
 # include <stdarg.h>
-# include <complex.h>
 
 /* *************************************** */
 /* Function list                           */
@@ -27,6 +26,8 @@
 
 int	ft_printf(const char *format, ...);
 int	handle_conversion(char c, va_list *args);
-int	ft_putnbr_base_fd(unsigned long long b, char *base, int fd);
+int	ft_putnbr_base_fd(unsigned long long n, char *base, int fd);
+int	ft_putnbr_count(int n);
+int	ft_putnbr_unsigned(unsigned int n);
 
 #endif
