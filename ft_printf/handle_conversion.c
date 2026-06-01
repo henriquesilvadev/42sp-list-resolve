@@ -6,21 +6,27 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 13:29:10 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/05/31 12:09:12 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/06/01 12:20:28 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+#include <complex.h>
+#include <stdarg.h>
 
 static int	ft_putchar_count(int c);
 static int	ft_print_ptr(unsigned long long addr);
 static int	ft_print_hex(unsigned int nbr, int upper);
+static int	digit_len(unsigned int nbr);
 
-int	handle_conversion(char c, va_list *args)
+int	handle_conversion(t_conversion conv, va_list *args)
 {
-	char	*str;
+	char			*str;
+	unsigned int	nbr;
+	size_t			content_len;
+	size_t			padding;
 
-	if (c == 's')
+	if (conv.specifier == 's')
 	{
 		str = va_arg(*args, char *);
 		if (!str)
@@ -28,19 +34,24 @@ int	handle_conversion(char c, va_list *args)
 		ft_putstr_fd(str, 1);
 		return (ft_strlen(str));
 	}
-	if (c == 'c')
+	if (conv.specifier == 'c')
 		return (ft_putchar_count(va_arg(*args, int)));
-	if (c == 'p')
+	if (conv.specifier == 'p')
 		return (ft_print_ptr((unsigned long long)va_arg(*args, void *)));
-	if (c == 'd' || c == 'i')
+	if (conv.specifier == 'd' || conv.specifier == 'i')
 		return (ft_putnbr_count(va_arg(*args, int)));
-	if (c == 'u')
+	if (conv.specifier == 'u')
 		return (ft_putnbr_unsigned(va_arg(*args, unsigned int)));
-	if (c == 'X')
+	if (conv.specifier == 'X')
+	{
+		nbr = (unsigned int) va_arg(*args, unsigned int);
+		content_len = digit_len(nbr);
+		padding = conv.width - content_len;
 		return (ft_print_hex((unsigned int)va_arg(*args, unsigned int), 1));
-	if (c == 'x')
+	}
+	if (conv.specifier == 'x')
 		return (ft_print_hex((unsigned int)va_arg(*args, unsigned int), 0));
-	if (c == '%')
+	if (conv.specifier == '%')
 		return (ft_putchar_count('%'));
 	return (0);
 }
@@ -72,4 +83,24 @@ static int	ft_putchar_count(int c)
 		return (ft_strlen("(null)"));
 	ft_putchar_fd(c, 1);
 	return (1);
+}
+
+static int	digit_len(unsigned int nbr)
+{
+	size_t	count;
+
+	count = 0;
+	if (nbr == 0)
+		return (1);
+	if (nbr < 0)
+	{
+		nbr *= -1;
+		count += 1;
+	}
+	while (nbr > 0)
+	{
+		nbr /= 10;
+		count++;
+	}
+	return (count);
 }
