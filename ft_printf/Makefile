@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/28 16:02:56 by hhonorio          #+#    #+#              #
-#    Updated: 2026/05/31 12:14:21 by hhonorio         ###   ########.fr        #
+#    Updated: 2026/06/04 12:48:40 by hhonorio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME    = libftprintf.a
@@ -14,15 +14,17 @@ CC      = cc
 CFLAGS  = -Wall -Wextra -Werror
 RM      = rm -rf
 
-LIBFT_DIR = ./libft
+LIBFT_DIR = ./include/libft
 LIBFT	=	$(LIBFT_DIR)/libft.a
 
-SRCS    = ft_printf.c \
-          handle_conversion.c \
-		  ft_putnbr_base_fd.c \
-		  ft_putnbr.c 
+SRCS    = src/ft_printf.c \
+          src/handle_conversion.c \
+		  src/ft_putnbr_base_fd.c \
+		  src/ft_putnbr.c \
+		  src/parser_conversion.c \
+		  src/print_nbr_base.c
 
-OBJS    = $(SRCS:%.c=objs/%.o)
+OBJS = $(SRCS:src/%.c=objs/%.o)
 
 all: $(LIBFT) $(NAME)
 
@@ -30,10 +32,11 @@ $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
 $(NAME): $(OBJS)
+	cp $(LIBFT) $@
 	ar rcs $@ $^
 
-objs/%.o: %.c | objs
-	$(CC) $(CFLAGS) -I$(LIBFT_DIR) -c $< -o $@
+objs/%.o: src/%.c | objs
+	$(CC) $(CFLAGS) -Iincludes -I$(LIBFT_DIR) -c $< -o $@
 
 objs:
 	mkdir -p objs
@@ -48,4 +51,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re objs test
+.PHONY: all clean fclean re objs
