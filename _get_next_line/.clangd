@@ -1,0 +1,11 @@
+CompileFlags:
+  Add:
+    - -I/usr/lib/gcc/x86_64-linux-gnu/12/include
+    - -I/usr/include
+    - -I/usr/local/include
+    - -I.
+    - -I./includes
+    - -std=c99
+
+Diagnostics:
+  UnusedIncludes: None

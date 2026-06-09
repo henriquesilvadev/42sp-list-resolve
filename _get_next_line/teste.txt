@@ -1,0 +1,6 @@
+Linha 1: texto curto
+Linha 2 um pouco maior pra cruzar o limite do BUFFER_SIZE de 42 bytes
+
+Acima tem uma linha vazia (so com \n).
+Esta linha aqui e propositalmente bem longa, com bastante texto, justamente pra forcar o get_next_line a fazer varias leituras do buffer e concatenar os pedacos antes de achar o \n.
+fim sem newlineinha 3
